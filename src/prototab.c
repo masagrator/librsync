@@ -27,7 +27,7 @@
  * implied literal value, and length of the first and second parameters. The
  * implied value is only used if the first parameter length is zero. */
 
-#include "config.h"
+
 #include "librsync.h"
 #include "command.h"
 #include "prototab.h"

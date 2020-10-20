@@ -17,7 +17,7 @@
 
 #include <stdint.h>
 #include <string.h>
-#include "config.h"
+
 
 #ifndef WORDS_BIGENDIAN  /* From librsync config.h. */
 #  define NATIVE_LITTLE_ENDIAN

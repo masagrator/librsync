@@ -19,7 +19,11 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include "config.h"
+
 #include "librsync_export.h"
+
+#define LIBRSYNC_VERSION 2
+#define PACKAGE "${APP_TITLE}"
+#define VERSION "${LIBRSYNC_VERSION}"
 
 LIBRSYNC_EXPORT char const rs_librsync_version[] = PACKAGE " " VERSION;

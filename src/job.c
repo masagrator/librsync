@@ -33,7 +33,7 @@
  *
  * \sa \ref api_streaming \sa rs_job_iter() \sa ::rs_job */
 
-#include "config.h"
+
 #include <assert.h>
 #include <stdlib.h>
 #include <time.h>
@@ -106,8 +106,8 @@ rs_result rs_job_iter(rs_job_t *job, rs_buffers_t *buffers)
             && orig_in && orig_out) {
             rs_error("internal error: job made no progress " "[orig_in="
                      FMT_SIZE ", orig_out=" FMT_SIZE ", final_in=" FMT_SIZE
-                     ", final_out=" FMT_SIZE "]", orig_in, orig_out,
-                     buffers->avail_in, buffers->avail_out);
+                     ", final_out=" FMT_SIZE "]", (unsigned int)orig_in, (unsigned int)orig_out,
+                     (unsigned int)buffers->avail_in, (unsigned int)buffers->avail_out);
             return RS_INTERNAL_ERROR;
         }
     return result;

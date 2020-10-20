@@ -23,7 +23,7 @@
  * \todo Other things to show in statistics: number of input and output bytes,
  * number of times we blocked waiting for input or output, number of blocks. */
 
-#include "config.h"
+
 #include <stdio.h>
 #include "librsync.h"
 #include "trace.h"
@@ -76,7 +76,7 @@ char *rs_format_stats(rs_stats_t const *stats, char *buf, size_t size)
         len +=
             snprintf(buf + len, size - (size_t)len,
                      "signature[" FMT_LONG " blocks, " FMT_SIZE
-                     " bytes per block]", stats->sig_blocks, stats->block_len);
+                     " bytes per block]", stats->sig_blocks, (unsigned int)stats->block_len);
     }
 
     sec = (int)(stats->end - stats->start);

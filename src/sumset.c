@@ -20,7 +20,7 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include "config.h"
+
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
@@ -171,9 +171,9 @@ rs_result rs_sig_args(rs_long_t old_fsize, rs_magic_number * magic,
     else if (old_fsize >= 0 && *strong_len < min_strong_len) {
         rs_warn("strong_len=" FMT_SIZE " smaller than recommended minimum "
                 FMT_SIZE " for old_fsize=" FMT_LONG " with block_len=" FMT_SIZE,
-                *strong_len, min_strong_len, old_fsize, *block_len);
+                (unsigned int)*strong_len, (unsigned int)min_strong_len, old_fsize, (unsigned int)*block_len);
     } else if (*strong_len > max_strong_len) {
-        rs_error("invalid strong_len=" FMT_SIZE " for magic=%#x", *strong_len,
+        rs_error("invalid strong_len=" FMT_SIZE " for magic=%#x", (unsigned int)*strong_len,
                  (int)*magic);
         return RS_PARAM_ERROR;
     }

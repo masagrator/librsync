@@ -36,7 +36,7 @@
  *
  * \todo Perhaps expose a routine for shuffling the buffers. */
 
-#include "config.h"
+
 #include <assert.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -111,7 +111,7 @@ rs_result rs_infilebuf_fill(rs_job_t *job, rs_buffers_t *buf, void *opaque)
             return RS_IO_ERROR;
         } else {
             rs_error("no error bit, but got " FMT_SIZE
-                     " return when trying to read", len);
+                     " return when trying to read", (unsigned int)len);
             return RS_IO_ERROR;
         }
     }

@@ -27,7 +27,7 @@
  * whatever data is available. When a whole block has arrived, or we've reached
  * the end of the file, we write the checksum out. */
 
-#include "config.h"
+
 #include <assert.h>
 #include <stdlib.h>
 #include "librsync.h"

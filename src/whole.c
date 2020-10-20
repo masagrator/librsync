@@ -27,7 +27,7 @@
                                |        -- Alan Perlis
                                */
 
-#include "config.h"
+
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -145,7 +145,7 @@ rs_result rs_patch_file(FILE *basis_file, FILE *delta_file, FILE *new_file,
 
     job = rs_patch_begin(rs_file_copy_cb, basis_file);
     /* Default size inbuf and outbuf 64K. */
-    r = rs_whole_run(job, delta_file, new_file, 64 * 1024, 64 * 1024);
+    r = rs_whole_run(job, delta_file, new_file, 32 * 1024 * 1024, 32 * 1024 * 1024);
     if (stats)
         memcpy(stats, &job->stats, sizeof *stats);
     rs_job_free(job);
